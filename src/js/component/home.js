@@ -25,6 +25,7 @@ export class Home extends React.Component {
 		// console.log("url", url);
 		this.setState({
 			current: "https://assets.breatheco.de/apis/sound/" + url
+
 		});
 	};
 	// pipo() {
@@ -62,9 +63,14 @@ export class Home extends React.Component {
 				})}
 
 				<div className="fixed-bottom bg-secondary">
-					<Player currentUrl={this.state.current} />
+					<Player /*songIdFromHome={this.state.songs[i].id}*/ currentUrl={this.state.current}/>
 				</div>
 			</div>
 		);
 	}
 }
+// NOTA PARA EL BOTON FORWARD Y BACKWARD NECESITO QUE LA FUNCION SONG PLAY, META EN EL ESTADO EL ID, DEL SONIDO, TENGO QUE MANDARSELA EN EL URL AL PLAYER
+// POR LO TANTO TENGO QUE VER SI SE LA TENGO QUE MANDAR A SONGS , YO CREO QUE SI, EN SONGS LA RECIBE, Y AL HACER CLICK EN PLAY SE LA MANDA AL PLAYER JUNTO CON EL
+//URL, DESPUES EN EL PLAYER, YA ESTA AGARRANDOLA EN EL CONSTRUCTOR(PROPS), Y YA ESTA UNA VARIABLE SETEADA AHI
+// EL SIGUIENTE PASO ES HACER LOS BOTONES FORWARD Y BACKWARD Y  onClick={() => this.play(this.state.currentIndex-1)}
+// EN VEZ DEL CURRENT INDEX VA MI VARIABLE CON MI ID

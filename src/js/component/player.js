@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 export class Player extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
-			toggle: null
+			toggle: null,
+            songId: this.props.songIdFromHome
 		};
 		this.audio = null;
 	}
